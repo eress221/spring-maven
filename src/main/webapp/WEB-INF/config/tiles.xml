@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+    <!-- 기본 레이아웃 -->
+    <definition name="defaultTpl" template="/WEB-INF/views/layout/layout.jsp">
+        <put-attribute name="title" value="기본 타이틀" />
+        <put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+        <put-attribute name="leftMenu" value="/WEB-INF/views/common/left_menu.jsp" />
+        <put-attribute name="topMenu" value="/WEB-INF/views/common/top_menu.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+    </definition>
+    <definition name="REGEXP:(.*)\.defaultTpl" extends="defaultTpl">
+        <put-attribute name="title" expression="${title}" />
+        <put-attribute name="content"  value="/WEB-INF/views/{1}.jsp" />
+    </definition>
+
+    <!-- 팝업 레이아웃 -->
+<!--    <definition name="popupTpl" template="/WEB-INF/views/layout/popup_layout.jsp">-->
+<!--        <put-attribute name="title" value="기본 타이틀" />-->
+<!--        <put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />-->
+<!--    </definition>-->
+<!--    <definition name="REGEXP:(.*)\.popupTpl" extends="popupTpl">-->
+<!--        <put-attribute name="title" expression="${title}" />-->
+<!--        <put-attribute name="content"  value="/WEB-INF/views/{1}.jsp" />-->
+<!--    </definition>-->
+
+    <!-- 로그인 레이아웃 -->
+    <definition name="loginTpl" template="/WEB-INF/views/layout/login_layout.jsp">
+        <put-attribute name="title" value="기본 타이틀" />
+        <put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+    </definition>
+    <definition name="REGEXP:(.*)\.loginTpl" extends="loginTpl">
+        <put-attribute name="title" expression="${title}" />
+        <put-attribute name="content"  value="/WEB-INF/views/{1}.jsp" />
+    </definition>
+
+    <!-- 모바일 레이아웃 -->
+<!--    <definition name="mobileTpl" template="/WEB-INF/views/layout/mobile_layout.jsp">-->
+<!--        <put-attribute name="title" value="기본 타이틀" />-->
+<!--        <put-attribute name="header" value="/WEB-INF/views/common/mobile_header.jsp" />-->
+<!--        <put-attribute name="footer" value="/WEB-INF/views/common/mobile_footer.jsp" />-->
+<!--    </definition>-->
+<!--    <definition name="REGEXP:(.*)\.mobileTpl" extends="mobileTpl">-->
+<!--        <put-attribute name="title" expression="${title}" />-->
+<!--        <put-attribute name="content"  value="/WEB-INF/views/{1}.jsp" />-->
+<!--    </definition>-->
+
+</tiles-definitions>
